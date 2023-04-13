@@ -22,13 +22,15 @@ function LoginPage() {
               
                 console.log('heloooooooooo2',response.data.access_token);
                 localStorage.clear();
-                const isToken = localStorage.getItem('accessToken');
+                const isToken = localStorage.getItem('access_token');
                 if(isToken){
                     localStorage.clear();
-                    localStorage.setItem('accessToken',response.data.access_token);
+                    localStorage.setItem('access_token',response.data.access_token);
+                    localStorage.setItem('refresh_token',response.data.refresh_token)
                     setToken(response.data.access_token);
                 }else{         
-                    localStorage.setItem('accessToken',response.data.access_token);
+                    localStorage.setItem('access_token',response.data.access_token);
+                    localStorage.setItem('refresh_token',response.data.refresh_token);
                      setToken(response.data.access_token);
                 }
               } catch (error) {

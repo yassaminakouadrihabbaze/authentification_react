@@ -8,12 +8,20 @@ import React from 'react';
 import LoginPage from "./loginPage";
 import Prediction from "./prediction";
 import MyComponent from "./TestComponent";
+import LogoutButton from "./Logout";
+
+// const keycloakConfig = {
+//   url: 'http://your-keycloak-server/auth',
+//   realm: 'your-realm',
+//   clientId: 'your-client-id',
+// };
 
 const App = () => {
 
 
   return (   
       <BrowserRouter>
+      <LogoutButton />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/Prediction" element={<Prediction />} />
